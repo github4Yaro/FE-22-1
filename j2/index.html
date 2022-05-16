@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            J2 Homework
+        </title>
+        <link href="styles_j2.css" rel="stylesheet"/>
+        <script src="j2.js">
+        </script>
+    </head>
+    <body>
+    	<div class="content">
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'size')">
+                Обьем цилиндра
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'avg')">
+                Средняя прибыль
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'abbr')">
+                Аббревиатура
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'sayHello')">
+                Приветствие
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'perSquere')">
+                Периметр квадрата
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'speed')">
+                Скорость
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'revert')">
+                Наоборот
+            </button>
+        </div>
+        <!-- Tab content -->
+        <div class="tabcontent" id="size" style="display: block;">
+            <div class="form">
+                <div>
+                    <label for="heigthItem">
+                        высота цилиндра:
+                    </label>
+                    <input id="heigthItem" name="heigth" required="" type="text"/>
+                </div>
+                <div>
+                    <label for="diameterItem">
+                        диаметр основания цилиндра:
+                    </label>
+                    <input id="diameterItem" name="diameter" required="" type="text"/>
+                </div>
+                <div>
+                    <button onclick="calSize()" type="button">
+                        Расчитать
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('size')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="avg">
+            <div class="form">
+                <div>
+                    <label for="firstMonth">
+                        прибыль за первый месяц:
+                    </label>
+                    <input id="firstMonth" type="text"/>
+                </div>
+                <div>
+                    <label for="secondMonth">
+                        прибыль за второй месяц:
+                    </label>
+                    <input id="secondMonth" type="text"/>
+                </div>
+                <div>
+                    <label for="thirdMonth">
+                        прибыль за третий месяц:
+                    </label>
+                    <input id="thirdMonth" type="text"/>
+                </div>
+                <div>
+                    <button onclick="avgAmount()" type="button">
+                        Расчитать
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('avg')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="abbr">
+            <div class="form">
+            	<div>
+                    <label for="lastName">
+                        Фамилия:
+                    </label>
+                    <input id="lastName" type="text"/>
+                </div>
+                <div style="margin-left:32px;">
+                    <label for="firstName">
+                        Имя:
+                    </label>
+                    <input id="firstName" type="text"/>
+                </div>
+                <div>
+                    <label for="middleName">
+                        Отчество:
+                    </label>
+                    <input id="middleName" type="text"/>
+                </div>
+                <div>
+                    <button onclick="abbr()" type="button">
+                        Составить
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('abbr')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="sayHello">
+            <div class="form">
+            	
+                <div>
+                    <label for="userName">
+                       Введите имя:
+                    </label>
+                    <input id="userName" type="text"/>
+                </div>
+                <div>
+                    <button onclick="sayHello()" type="button">
+                        Привет!
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('sayHello')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="perSquere">
+            <div class="form">
+            	
+                <div>
+                    <label for="sqLength">
+                       Введите длину стороны:
+                    </label>
+                    <input id="sqLength" type="text"/>
+                </div>
+                <div>
+                    <button onclick="perSquere()" type="button">
+                        Расчитать
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('perSquere')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="speed">
+            <div class="form">
+            	
+                <div>
+                    <label for="distance">
+                       Введите расстояние:
+                    </label>
+                    <input id="distance" type="text"/>
+                </div>
+                <div>
+                    <label for="time">
+                       Введите желаемое время (ч):
+                    </label>
+                    <input id="time" type="text"/>
+                </div>
+                <div>
+                    <button onclick="speed()" type="button">
+                        Расчитать
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('speed')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="revert">
+            <div class="form">
+            	
+                <div>
+                    <label for="tNumber">
+                       Введите число:
+                    </label>
+                    <input id="tNumber" type="text"/>
+                </div>
+                <div>
+                    <button onclick="revert()" type="button">
+                        Развернуть
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('revert')">Очистить</button></div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
