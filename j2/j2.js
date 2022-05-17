@@ -43,17 +43,21 @@ function sayHello() {
 
 function revert() {
 	let num = +document.getElementById('tNumber').value;
+	const sign = Math.sign(num);
 	const DELIMITER = 10;
 	let revert = 0;
 
+	num = num * sign;
 	while(num>=1) {
 		revert = revert*DELIMITER + num%DELIMITER;
 		num = Math.trunc(num/DELIMITER);
 	} 
-
+	revert = revert * sign; 
+	
 	const anw = `Разворот числа равен, ${revert}`;
 
-	setAnswer(anw, 'revert');		
+	setAnswer(anw, 'revert');
+		
 }
 
 function speed() {
