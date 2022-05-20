@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            J3 Homework
+        </title>
+        <link href="styles.css" rel="stylesheet"/>
+        <script src="j3.js">
+        </script>
+    </head>
+    <body>
+    	<div class="content">
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'happyTicket')">
+                Счастливый билет
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'secretPlace')">
+                Секретный вагон
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'tempHelper')">
+                Температурный помощник
+            </button>
+        </div>
+        <!-- Tab content -->
+        <div class="tabcontent" id="happyTicket" style="display: block;">
+            <div class="form">
+                <div>
+                    <label for="ticketNum">
+                        номер билета:
+                    </label>
+                    <input id="ticketNum" name="heigth" required="" type="text"/>
+                </div>
+                <div>
+                    <button onclick="happyTicket()" type="button">
+                        Проверить
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('happyTicket')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="secretPlace">
+            <div class="form">
+                <div>
+                    <label for="trTicket">
+                        номер билета:
+                    </label>
+                    <input id="trTicket" type="text"/>
+                </div>
+                <div>
+                    <button onclick="secretPlace()" type="button">
+                        Найти место
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('secretPlace')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="tempHelper">
+            <div class="form">
+            	<div>
+                    <label for="tempC">
+                        Градусы:
+                    </label>
+                    <input id="tempC" type="text" placeholder="0"/><sup>o</sup>C
+                </div>
+                <div>
+                    <button onclick="tempHelper()" type="button">
+                        Перевести
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('tempHelper')">Очистить</button></div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
