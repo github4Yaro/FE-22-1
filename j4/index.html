@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            J4 Homework
+        </title>
+        <link href="styles.css" rel="stylesheet"/>
+        <script src="j4.js">
+        </script>
+    </head>
+    <body>
+    	<div class="content">
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'findNum')">
+                Поиск цифры
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'drawingSym')">
+                Рисование
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'dragonSlayer')">
+                Ловля драконов
+            </button>
+        </div>
+        <!-- Tab content -->
+        <div class="tabcontent" id="findNum" style="display: block;">
+            <div class="form">
+                <div>
+                    <label for="firstNum">
+                        первое число диапазона:
+                    </label>
+                    <input id="firstNum" name="heigth" maxlength="2" minlength="2" type="text"/>
+                </div>
+                <div>
+                    <label for="secondNum">
+                        второе число диапазона:
+                    </label>
+                    <input id="secondNum" name="heigth" maxlength="2" minlength="2" type="text"/>
+                </div>
+                <div>
+                    <button onclick="findNum()" type="button">
+                        Найти
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('findNum')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="drawingSym">
+            <div class="form">
+                <div>
+                    <label for="symbol">
+                        Введите символ:
+                    </label>
+                    <input id="symbol" maxlength="1" type="text"/>
+                </div>
+                <div>
+                    <label for="length">
+                        Введите длину:
+                    </label>
+                    <input id="length" type="text"/>
+                </div>
+                <div>
+                    <button onclick="drawingSym()" type="button">
+                        Нарисовать
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('drawingSym')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="dragonSlayer">
+            <div class="form">
+                <div>
+                    <button onclick="dragonSlayer()" type="button">
+                        Составить отчет разведки
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('dragonSlayer')">Очистить</button></div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
