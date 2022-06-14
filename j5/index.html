@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            J5 Homework
+        </title>
+        <link href="styles.css" rel="stylesheet"/>
+        
+    </head>
+    <body>
+    	<div class="content">
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'DNA')">
+                ДНК
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'shortestWord')">
+                Короткое слово
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'sentsSort')">
+                Заказ
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'checkMethods')">
+                Чек методы
+            </button>
+        </div>
+        <!-- Tab content -->
+        <div class="tabcontent" id="DNA" style="display: block;">
+            <div class="form">
+                <form name="DNA_form" onsubmit="return DNA()" method="post">
+                    <div>
+                        <label for="DNA">
+                            строчка ДНК:
+                        </label>
+                        <input id="DNAString" name="heigth" type="text" pattern="[ATCG]+" title="The allowed list is A,T,C,G"/>
+                    </div>
+                    
+                    <div>
+                        <input type="submit" value="Дополнить"> 
+                    </div>
+                </form>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('DNA')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="shortestWord">
+            <div class="form">
+                <div>
+                    <label for="str">
+                        Введите строку:
+                    </label>
+                    <input id="str" size="150" type="text"/>
+                </div>
+                
+                <div>
+                    <button onclick="shortestWord()" type="button">
+                        Искать
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('shortestWord')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="sentsSort">
+            <div class="form">
+                <div>
+                    <label for="strForSort">
+                        Введите строку:
+                    </label>
+                    <input id="strForSort" size="150"  type="text"/>
+                </div>
+                <div>
+                    <button onclick="sentsSort()" type="button">
+                        Сортировать
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="resetTab('sentsSort')">Очистить</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="checkMethods">
+            <div class="row">
+                <div class="col products">
+                    <h3>Products</h3>
+                    <div class="row">
+                        <div></div>
+                        
+                    </div>
+                    <div class="row">
+                        <div>Banana</div>
+                        <div>
+                            <button onclick="checkout.decrease(this)">-</button>
+                            <input type='text' value='0' size='3' min='0'/> 
+                            <button onclick="checkout.increase(this)">+</button>
+                        </div>
+                        <div>
+                            <button onclick="checkout.add(this)" data-type="banana">Add</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>Lemon</div>
+                        <div>
+                            <button onclick="checkout.decrease(this)">-</button>
+                            <input type='text' value='0' size='3' min='0'/> 
+                            <button onclick="checkout.increase(this)">+</button>
+                        </div>
+                        <div>
+                            <button onclick="checkout.add(this)" data-type="lemon">Add</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>Laptop</div>
+                        <div>
+                            <button onclick="checkout.decrease(this)">-</button>
+                            <input type='text' value='0' size='3' min='0'/> 
+                            <button onclick="checkout.increase(this)">+</button>
+                        </div>
+                        <div>
+                            <button onclick="checkout.add(this)" data-type="laptop">Add</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>Phone</div>
+                        <div>
+                            <button onclick="checkout.decrease(this)">-</button>
+                            <input type='text' value='0' size='3' min='0'/> 
+                            <button onclick="checkout.increase(this)">+</button>
+                        </div>
+                        <div>
+                            <button onclick="checkout.add(this)" data-type="phone">Add</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>Car</div>
+                        <div>
+                            <button onclick="checkout.decrease(this)">-</button>
+                            <input type='text' value='0' size='3' min='0'/> 
+                            <button onclick="checkout.increase(this)">+</button>
+                        </div>
+                        <div>
+                            <button onclick="checkout.add(this)" data-type="car">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3>The shipping basket</h3>
+                    <div class="row">
+                        <div>ID</div>
+                        <div>Name</div>
+                        <div>Price</div>
+                        <div>Count</div>
+                        <div>Amount</div>
+                        <div></div>
+                    </div>
+                    <div id="shippingBasket"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="j5.js"> </script>
+        
+    </body>
+</html>
