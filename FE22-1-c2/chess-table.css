@@ -1,0 +1,183 @@
+td{
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgb(36, 5, 5);
+    background-color: rgb(35, 14, 53);
+}
+
+.odd td:nth-child(2n + 1){
+    background-color: beige;
+}
+.even td:nth-child(2n){
+    background-color: beige;
+}
+
+td div {
+    
+    width: 0px;
+    margin: auto;
+    border-left: 17px solid transparent;
+    border-right: 17px solid transparent;
+    border-bottom-width: 40px;
+    border-bottom-style: solid;
+    padding-top: 12px;
+}
+
+td div::after{
+    content: '\25BC';
+    width: 10px;
+    height: 10px;
+    font-size: 28px;
+    font-weight: 800;
+    display: block;
+    position: relative;
+    top: -39px;
+    left: -14px;
+}
+
+.king, .queen, .bishop{
+    height: 5px;
+    width: 0px;
+    margin: auto;
+    border-left: 17px solid transparent;
+    border-right: 17px solid transparent;
+    border-bottom-width: 40px;
+    border-bottom-style: solid;
+    padding-top: 12px;
+}
+
+.king::before{
+    content: '᛭';
+    font-size: 30px;
+    font-weight: 800;
+    display: block;
+    position: relative;
+    top: -25px;
+    left: -11px;
+}
+.queen::before{
+    content: 'ᗾ';
+    font-size: 24px;
+    font-weight: 800;
+    display: block;
+    position: relative;
+    transform: rotate(-90deg);
+    top: -11px;
+    left: -1px;
+}
+.queen::after{
+    top: -35px;
+}
+
+
+.knigth {
+    width: 32px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom-width: 17px;
+    border-bottom-style: solid;
+    padding-top: 0px;
+}
+.knigth::before{
+    content: '⏜';
+    font-size: 24px;
+    font-weight: 800;
+    display: block;
+    position: relative;
+    transform: scale(1.5,2.1);
+    top: 5px;
+    left: 8px;
+}
+
+.knigth::after {
+    content: 'S';
+    width: 10px;
+    height: 10px;
+    font-size: 64px;
+    font-weight: 800;
+    display: block;
+    position: relative;
+    top: -32px;
+    left: 22px;
+    transform: rotateY(180deg);
+}
+
+.bishop::before {
+    content: 'ሰ';
+    font-size: 24px;
+    font-weight: 800;
+    display: block;
+    position: relative;
+    top: -16px;
+    left: -9px; 
+}
+.bishop::after{
+    top: -32px;
+}
+
+.rook::after{
+    content: '';
+}
+.rook::before{
+    content: '‧‧‧‧';
+    font-size: 24px;
+    font-weight: 800;
+    display: block;
+    position: relative;
+    top: -7px;
+    left: 3px;
+}
+.rook {
+    width: 29px;
+    height: 10px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom-width: 47px;
+    border-bottom-style: solid;
+    padding-top: 0px;    
+}
+.pawn::after{
+    content: '●';
+    font-size: 42px;
+    font-weight: 800;
+    display: block;
+    position: relative;
+    top: -20px;
+    left: -12px;
+
+}
+
+
+.odd td:nth-child(2n + 2) div.black, .odd td:nth-child(2n + 2) div.black::before, .odd td:nth-child(2n + 2) div.black::after {
+     border-bottom-color: #454141;
+     color: #454141;
+}
+
+.even td:nth-child(2n+1) div.black,.even td:nth-child(2n+1) div.black::before, .even td:nth-child(2n+1) div.black::after{
+    border-bottom-color: #454141;
+    color: #454141;
+}
+
+.black{
+    border-bottom-color: black;
+}
+
+.white{
+    border-bottom-color: white;
+}
+
+.black::before{
+    color: black;
+}
+
+.white::before{
+    color: white;
+}
+
+.black::after{
+    color: black;
+}
+
+.white::after{
+    color: white;
+}
