@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            J6 Homework
+        </title>
+        <link href="styles.css" rel="stylesheet"/>
+        <script src="main.js">
+        </script>
+    </head>
+    <body>
+    	<div class="content">
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'findChair')">
+                Find a Chair
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'ticTacToe')">
+                Tic-Tac-Toe
+            </button>
+             <button class="tablinks" onclick="openTab(event, 'Calc')">
+                Calc
+            </button>
+        </div>
+        <!-- Tab content -->
+        <div class="tabcontent" id="findChair" style="display: block;">
+            <div class="form">
+                <div class="row">
+                    <div class="col" style="max-width: 40%">
+                        <div>
+                            <form id="add_room">
+                                <label for="used_count">
+                                    Chairs in room:
+                                </label>
+                                <input type="text" id="all_count" maxlength="2" size="2" placeholder="9" />
+                                <label for="used_count">
+                                    Used chairs:
+                                </label>
+                                <input type="text" id="used_count" maxlength="2" size="2" placeholder="4" />
+                                <button onclick="add()" type="button">
+                                    Add manually
+                                </button>
+                            </form>
+                        </div>
+                        <div>
+                            OR
+                        </div>
+                        <div>
+                            <button onclick="generateRooms()" type="button">
+                                Generate
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <div class="col"> 
+                        <ol id="rooms"></ol>
+                    </div>
+                </div>
+               
+                    <div>
+                        <form id="find_chair">
+                            <input id="needed" type="text" maxlength="2" size="2" placeholder="3"/>
+                            <button onclick="findChair()" type="button">
+                                Find
+                            </button>
+                        </form>
+                    </div>
+                
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+                <div class="row"></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="ticTacToe">
+            <div class="form">
+                <div id="playgraund">
+                    <div class="row">
+                        <div class="field" onclick="ticTacToe(this)">
+                            <input type='hidden' value=0 />
+                        </div>
+                        <div class="field" onclick="ticTacToe(this)">
+                            <input type='hidden' value=0 />
+                        </div>
+                        <div class="field" onclick="ticTacToe(this)">
+                            <input type='hidden' value=0 />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="field" onclick="ticTacToe(this)">
+                            <input type='hidden' value=0 />
+                        </div>
+                        <div class="field" onclick="ticTacToe(this)">
+                            <input type='hidden' value=0 />
+                        </div>
+                        <div class="field" onclick="ticTacToe(this)">
+                            <input type='hidden' value=0 />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="field" onclick="ticTacToe(this)">
+                            <input type='hidden' value=0 />
+                        </div>
+                        <div class="field" onclick="ticTacToe(this)">
+                            <input type='hidden' value=0 />
+                        </div>
+                        <div class="field" onclick="ticTacToe(this)">
+                            <input type='hidden' value=0 />
+                        </div>
+                    </div>
+                </div> 
+                
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="playAgain()">Play again</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="Calc">
+            <div class="form">
+                <div>
+                    <label for="strForCalc">
+                        Enter string:
+                    </label>
+                    <input id="strForCalc"  type="text"/>
+                </div>
+                <div>
+                    <button onclick="lazyWay()" type="button">
+                        Lazy way :)
+                    </button>
+                </div>
+            </div>
+            
+            <div class="answer">
+                <div class="text"></div>
+                <div><button onClick="resetTab('Calc')">Try again</button></div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
