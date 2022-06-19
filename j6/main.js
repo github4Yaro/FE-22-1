@@ -62,19 +62,26 @@ function generateRooms() {
 	return true;
 }
 
-function formatAnw(details) {
+function formatAnw(details, needed) {
 	let ret = 'You have to take ';
 	let found = 0;
+	let sum = 0;
 	for (let i=0; i < details.length; i++) {
 		if(details[i] > 0) {
 			found++;
+			sum += details[i];
 			ret += `${details[i]} chair(s) from room №${i+1} and `;
 		}
 	}
 	if(found == 0) {
 		ret = 'Oops all chairs are in use, try later';	
+	} else {
+		ret = ret.substr(0, ret.length-4);
+		if(sum != needed){
+			ret += 'and wait for more';	
+		}
 	}
-	return ret.substr(0, ret.length-4);
+	return ret;
 }
 
 
@@ -94,7 +101,7 @@ function findChair() {
 	let anw = chairs;
 	
 	if(typeof chairs == 'object') {
-		anw = formatAnw(chairs);
+		anw = formatAnw(chairs, needed);
 	}
 	
 	setAnswer(anw, 'findChair');
@@ -163,7 +170,7 @@ function testRow(row) {
 
 function ticTacToeTest(playgraund) {
 	let res = 0;
-	
+	let filled = 0;
 	for (let i=0; i < rowsMap.length; i++) {
 		let row = [];
 		let rowRule = rowsMap[i];
@@ -172,8 +179,14 @@ function ticTacToeTest(playgraund) {
 		}
 		res = testRow(row);
 		if(res > 0) {
-			break;
+			return res;
 		}
+		filled+=res;
+	}
+	if(filled == -8) {
+		res = -1;
+	} else {
+		res = 0;
 	}	
 	return res;
 }
@@ -189,12 +202,19 @@ function playAgain() {
 //========Calc==========//
 
 function lazyWay(){
-	const str = document.getElementById('strForCalc').value;
-	const anw = `the Lazy result IS ${eval(str)}`;
+	const firstCalc = document.getElementById('firstCalc').value;
+	const secondCalc = document.getElementById('secondCalc').value;
+	const actionCalc = document.getElementById('actionCalc').value;
+
+	const anw = `the Lazy result IS ${eval(firstCalc+actionCalc+secondCalc)}`;
+
 	document.body.querySelector("#Calc .form").style.display = "none";
 	setAnswer(anw, 'Calc');
 }
 
+function calc(first, second, action) {
+	return '';
+} 
 //========TABS=========//
 function openTab(evt, tabName) {
     let i, tabcontent, tablinks;
