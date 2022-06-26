@@ -1,0 +1,125 @@
+@keyframes lifehack {
+  0%    {position: relative; opacity: 1;   left: 0px;}
+  90%  {position: relative; opacity: 0.5; left: -800px;}
+  100%  {position: relative; opacity: 0.5; left: -800px;}
+}
+
+.img {
+	width: 800px;
+	height: 600px;
+	display: inline-block;	
+	float: left;
+}
+
+.container{
+	width: 800px;
+	height: 600px;
+  	display: inline-block;
+  	float: left;
+  	
+
+  	background-color: #a8f5f9;
+  	animation-name: lifehack;
+	animation-duration: 6s;
+}
+.container div{
+	position: relative;
+}
+.block_1 {
+	margin-top: 90px;
+	width: 60px;
+	height: 35px;
+	left:372px;
+	background-color: #00b900;
+}
+.block_2{
+	width: 150px;
+	height: 45px;
+	left: 318px;
+	background-color: #006900;
+}
+.block_3{
+	left:243px;
+	width: 300px;
+	height: 60px;
+	background-color: #006900;
+}
+.block_4{
+	left:193px;
+	width: 400px;
+	height: 70px;
+	background-color: #006900;
+}
+.block_5{
+	left:168px;
+	width: 450px;
+	height: 75px;
+	background-color: #005f00;
+}
+.block_6{
+	left:143px;
+	width: 500px;
+	height: 80px;
+	background-color: #005400;
+}
+.block_7{
+	left: 93px;
+	width: 600px;
+	height: 95px;
+	background-color: #003901;
+}
+.block_8{
+	left: 352px;
+	width: 100px;
+	height: 50px;
+	background-color: #2c1e23;
+}
+
+.ball {
+	width:  0px;
+	height: 0px;
+	position: relative;
+	border: solid 12px #986e48;
+	border-radius: 50px;	
+}
+.block_3 .ball{
+	top: 11px;
+    left: 128px;	
+}
+.block_4 .ball:nth-child(1){
+	top: 18px;
+    left: 91px;	
+}
+.block_4 .ball:nth-child(2){
+	top: -6px;
+    left: 236px;	
+}
+.block_5 .ball:nth-child(1){
+	top: 21px;
+    left: 129px;	
+}
+.block_5 .ball:nth-child(2){
+	top: 0px;
+    left: 335px;
+    border-width: 15px
+}
+.block_6 .ball:nth-child(1){
+	top: 13px;
+    left: 77px;
+    border-width: 17px	
+}
+.block_6 .ball:nth-child(2){
+	top: -17px;
+    left: 129px;
+    border-width: 17px;
+}
+.block_7 .ball:nth-child(1){
+	top: 37px;
+    left: 70px;	
+    border-width: 14px;
+}
+.block_7 .ball:nth-child(2){
+	top: -8px;
+    left: 381px;
+    border-width: 22px
+}
