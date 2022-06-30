@@ -1,0 +1,44 @@
+.classes{
+    --left-shift: -85px;
+    --left-shift-2: -703px;
+    --left-shift-3: -1288px;
+
+    --top-shift: -41px;
+    --top-shift-2: -668px;
+    --top-shift-3: -1388px;
+    
+    background-image: url(../img/alekzander-zagorulko-all.jpg);
+    width: 520px;
+    height: 590px;
+    display: inline-block;
+}
+
+.barbarian{
+    background-position: var(--left-shift) var(--top-shift);
+}
+
+.paladin{
+    background-position: var(--left-shift-2) var(--top-shift);
+}
+
+.hunter{
+    background-position: var(--left-shift-2) var(--top-shift-3);
+}
+.warrior{
+    background-position: var(--left-shift-3) var(--top-shift);
+}
+.mage {
+    background-position: var(--left-shift) var(--top-shift-2);
+}
+.necromancer {
+    background-position: var(--left-shift-2) var(--top-shift-2);
+}
+.priest{
+    background-position: var(--left-shift-3) var(--top-shift-2);
+}
+.assasin{
+    background-position: var(--left-shift) var(--top-shift-3);
+}
+.rouge{
+    background-position: var(--left-shift-3) var(--top-shift-3);
+}
