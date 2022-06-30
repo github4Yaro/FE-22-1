@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            J6 Homework
+        </title>
+        <link href="../styles.css" rel="stylesheet"/>
+        <link href="j7.css" rel="stylesheet"/>
+        <script src="main.js">
+        </script>
+    </head>
+    <body>
+    	<div class="content">
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'focus')">
+                Focus
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'runner')">
+                Run
+            </button>
+             <button class="tablinks" onclick="openTab(event, 'user')">
+                User generator
+            </button>
+        </div>
+        <!-- Tab content -->
+        <div class="tabcontent" id="focus" style="display: block;">
+            <div class="form">
+                <div id="cart" class="cart"></div>  
+                <div>
+                    <button onclick="getCart()">
+                        Get a cart
+                    </button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="runner">
+            <div class="form">
+                <div class="fox"></div>
+                <div class="chiken"></div>
+                <div class="tiger"></div>
+                <div class="pig"></div>
+                <div class="crab"></div>
+                <div class="hedgehog"></div>     
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            	<div><button onClick="playAgain()">Play again</button></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="user">
+            <div class="form">
+                <div>
+                    <label for="male">
+                        male
+                    </label>
+                    <input id="male" type="radio" name="gender"  value="male" checked/>
+                    <label for="female">
+                        female
+                    </label>
+                    <input id="female" type="radio" value="female" name="gender" />
+                </div>
+                
+                <div>
+                    <button onclick="user()" type="button">
+                        Generate
+                    </button>
+                </div>
+            </div>
+            
+            <div class="answer">
+                <div class="text"></div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

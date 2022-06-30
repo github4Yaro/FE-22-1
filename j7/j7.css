@@ -1,0 +1,194 @@
+
+@keyframes select-hearts {
+	0%  {background-position-y:120px;}
+	100%{background-position-y:4080px;}	
+}
+@keyframes select-clubs {
+	0%  {background-position-y:120px;}
+	100%{background-position-y:3960px;}	
+}
+@keyframes select-spades {
+	0%  {background-position-y:120px;}
+	100%{background-position-y:4200px;}	
+}
+@keyframes select-diamond {
+	0%  {background-position-y:120px;}
+	100%{background-position-y:3840px;}	
+}
+@keyframes select-K{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:3200px;}
+}
+@keyframes select-Q{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:3280px;}
+}
+@keyframes select-J{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:3360px;}
+}
+@keyframes select-10{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:3440px;}
+}
+@keyframes select-9{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:3520px;}
+}
+@keyframes select-8{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:3600px;}
+}
+@keyframes select-7{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:3680px;}
+}
+@keyframes select-6{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:3760px;}
+}
+@keyframes select-5{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:3840px;}
+}
+@keyframes select-4{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:3920px;}
+}
+@keyframes select-3{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:4000px;}
+}
+@keyframes select-2{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:4080px;}
+}
+@keyframes select-1{
+	0%  {background-position-x:0px;}
+	100%{background-position-x:4160px;}
+}
+
+.cart{
+	background-image: url(carts.png);
+	width: 80px;
+    height: 92px;
+    margin: auto;
+    border: solid 2px #000;
+    border-radius: 10px;
+    background-position: 0 120px;
+}
+
+.select-hearts{
+	animation: select-hearts;
+	animation-duration: 3s;
+	background-position-y:4080px;
+}
+.select-clubs{
+	animation: select-clubs;
+	animation-duration: 3s;
+	background-position-y:3960px;
+}
+.select-spades{
+	animation: select-spades;
+	animation-duration: 3s;
+	background-position-y:4200px;
+}
+.select-diamond{
+	animation: select-diamond;
+	animation-duration: 3s;
+	background-position-y:3840px;
+}
+.select-K{
+	animation: select-K;
+	animation-duration: 3s;
+	background-position-x:3200px;
+}
+.select-Q{
+	animation: select-Q;
+	animation-duration: 3s;
+	background-position-x:3280px;
+}
+.select-J{
+	animation: select-J;
+	animation-duration: 3s;
+	background-position-x:3360px;
+}
+.select-10{
+	animation: select-10;
+	animation-duration: 3s;
+	background-position-x:3440px;
+}
+.select-9{
+	animation: select-9;
+	animation-duration: 3s;
+	background-position-x:3520px;
+}
+.select-8{
+	animation: select-8;
+	animation-duration: 3s;
+	background-position-x:3600px;
+}
+.select-7{
+	animation: select-7;
+	animation-duration: 3s;
+	background-position-x:3680px;
+}
+.select-6{
+	animation: select-6;
+	animation-duration: 3s;
+	background-position-x:3760px;
+}
+.select-5{
+	animation: select-5;
+	animation-duration: 3s;
+	background-position-x:3840px;
+}
+.select-4{
+	animation: select-4;
+	animation-duration: 3s;
+	background-position-x:3920px;
+}
+.select-3{
+	animation: select-3;
+	animation-duration: 3s;
+	background-position-x:4000px;
+}
+.select-2{
+	animation: select-2;
+	animation-duration: 3s;
+	background-position-x:4080px;
+}
+.select-1{
+	animation: select-1;
+	animation-duration: 3s;
+	background-position-x:4160px;
+}
+
+
+#runner .form>div {
+	width: 135px;
+    height: 100px;
+	background-image: url(animals.png);
+}
+.fox {
+	background-position-x: 135px;
+}
+.chiken {
+	background-position-x: 525px;
+}
+.tiger {
+	background-position-y: -190px;
+	background-position-x: 135px;
+}
+.pig {
+	background-position-y: -190px;
+	background-position-x: 530px;
+}
+.crab {
+	background-position-y: -375px;
+	background-position-x: 530px;
+}
+.hedgehog {
+	background-position-y: -375px;
+	background-position-x: 135px;
+}
