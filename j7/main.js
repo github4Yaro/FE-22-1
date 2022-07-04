@@ -3,40 +3,77 @@ function randomIntFromInterval(min, max) { // min and max included
  	return Math.floor(Math.random() * (max - min + 1) + min)
 }
 //===========Focus============//
-const cart_liers = ['hearts','clubs','spades','diamond'];
-const cart_values = ['K','Q','J',10,9,8,7,6,5,4,3,2,1];
+const cart_liers = {'hearts':4080,'clubs':3960,'spades':4200,'diamond':3840}; 
+const cart_values = {'K':3200, 'Q':3280, 'J':3360, 10:3440, 9:3520, 8:3600, 7:3680, 6:3760,
+					   5:3840, 4:3920, 3:4000, 2:4080, 1:4160};
 
 function getCart() {
 	const el = document.getElementById('cart');
-	const cart_lier  = cart_liers[randomIntFromInterval(0, 3)];
-	const cart_value = cart_values[randomIntFromInterval(0, 12)];
+	const cart_lier  =  Object.keys(cart_liers)[randomIntFromInterval(0, 3)];
+	const cart_value =  Object.keys(cart_values)[randomIntFromInterval(0, 12)];
+	
+	/* CSS SOLUTION  */
+		//el.className = 'cart';
+		//el.className += ` select-${cart_lier}`;
+		//setTimeout(function() {el.className += ` select-${cart_value}`},3000);
+	/* CSS SOLUTION */
 
-	el.className = 'cart';
-	el.className += ` select-${cart_lier}`;
-	setTimeout(function() {el.className += ` select-${cart_value}`},3000);
+	/* JS SOLUTION */
+	for (let i = 0; i < cart_liers[cart_lier]; i++) {
+		setTimeout(function() {
+			el.style.backgroundPosition = `0 ${i}px`;
+		},i);
+	}
+	for (let j = 0; j < cart_values[cart_value]; j++) {
+		setTimeout(function() {
+			el.style.backgroundPosition = `${j}px ${cart_liers[cart_lier]}px`;
+		},cart_liers[cart_lier] + j);
+	}
+	/* JS SOLUTION */
 }
 //===========Run============//
-const runners_list = ['chiken','fox','tiger','pig','crab','cow'];
-const runners_colors = ['chiken','fox','tiger','pig','crab','cow'];
+const runners_list = ['chiken','fox','tiger','pig','crab','hedgehog'];
+const runners_colors = ['chiken','fox','tiger','pig','crab','hedgehog'];
 let runners = [];
 
 function Runner(name, stat) {
 	this.name = name;
 	this.stat = stat;
-	this.min = this.stat.reduce((min, run) => (min > run.time)?run.time:min, 20);
-	this.max = this.stat.reduce((max, run) => (max < run.time)?run.time:max, 0);	
+	this.min = this.stat.reduce((min, run) => (min > run.time)?run.time:min, 200);	
 }
 
 function randStat() {
-	return [{'time':randomIntFromInterval(10, 20)}, {'time':randomIntFromInterval(10, 20)}, {'time':randomIntFromInterval(10, 20)}];
+	return [{'time':randomIntFromInterval(10, 200)}, {'time':randomIntFromInterval(10, 200)}, {'time':randomIntFromInterval(10, 200)}];
+}
+
+function displayRunners(){
+	let fastest = runners[0];
+	let slowest = runners[0];
+	let answ = '<div class="runners">';
+	runners.forEach(function(runner){
+		if(fastest.min > runner.min) {
+			fastest = runner;	
+		} else if(slowest.min < runner.min) {
+			slowest = runner;
+		}
+		answ +=`<div class='runner'>
+			<div class="animal ${runner.name}">${runner.name}</div>
+			<div class="data">
+				<div class="speed">Best time:${runner.min}</div>
+			</div>
+		</div>`;
+	});
+	answ += '</div>';
+	setAnswer(answ,'runner');
+	document.body.querySelector('.'+fastest.name).className+=' winner';
+	document.body.querySelector('.'+slowest.name).className+=' loser';
 }
 
 
-
-
 function genRunners() {
-	runners_list.forEach(runner_name => runners.push(new Runner(runner_name,randStat())));	
-	console.log(runners);
+	runners = [];
+	runners_list.forEach(runner_name => runners.push(new Runner(runner_name,randStat())));
+	displayRunners();
 }
 
 
@@ -89,4 +126,3 @@ function resetTab(tabName) {
 	inputs.forEach(input => (input.type != 'submit')?input.value = "":'');
 	document.body.querySelector("#"+tabName+" .answer").style.display = "none";
 }
-
