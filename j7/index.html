@@ -49,17 +49,11 @@
                     <label for="male">
                         male
                     </label>
-                    <input id="male" type="radio" name="gender"  value="male" checked/>
+                    <input id="male" type="radio" name="gender" onclick="user('male')"  value="male" checked/>
                     <label for="female">
                         female
                     </label>
-                    <input id="female" type="radio" value="female" name="gender" />
-                </div>
-                
-                <div>
-                    <button onclick="user()" type="button">
-                        Generate
-                    </button>
+                    <input id="female" type="radio" value="female" onclick="user('female')" name="gender" />
                 </div>
             </div>
             

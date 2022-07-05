@@ -236,3 +236,26 @@
 	background-position-y: -375px;
 	background-position-x: 130px;
 }
+
+.gender {
+	width: 159px;
+	padding-top: 0px;
+	margin: auto;
+}
+.gender::before{
+	content:'';
+	width: 75px;
+    height: 75px;
+    display: block;
+    position: relative;
+    left: 40px;
+}
+
+.male::before{
+	background: url(man.png);
+	background-size: contain;
+}
+.female::before{
+	background: url(woman.png);
+	background-size: contain;
+}

@@ -33,6 +33,7 @@ function getCart() {
 }
 //===========Run============//
 const runners_list = ['chiken','fox','tiger','pig','crab','hedgehog'];
+const runners_colors = ['chiken','fox','tiger','pig','crab','hedgehog'];
 let runners = [];
 
 function Runner(name, stat) {
@@ -92,10 +93,10 @@ function randUser(gender) {
 	return  new User(name, age, gender);
 }
 
-function user(){
-	const gender = document.body.querySelector('input[name="gender"]:checked').value;
+function user(gender){
+	//const gender = document.body.querySelector('input[name="gender"]:checked').value;
 	const user = randUser(gender);
-	const ans = `<div class="${user.gender}">${user.name} (age ${user.age})</div>`;
+	const ans = `<div class="gender ${user.gender}">${user.name} (age ${user.age})</div>`;
 	setAnswer(ans,'user');
 }
 
