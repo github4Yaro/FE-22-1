@@ -33,7 +33,7 @@ function getCart() {
 }
 //===========Run============//
 const runners_list = ['chiken','fox','tiger','pig','crab','hedgehog'];
-const runners_colors = ['chiken','fox','tiger','pig','crab','hedgehog'];
+
 let runners = [];
 
 function Runner(name, stat) {
