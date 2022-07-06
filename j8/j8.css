@@ -1,0 +1,32 @@
+.colors label {
+	display: inline-block;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.colors input {
+	display:none;
+}
+
+input[type="radio"]:checked+label{ 
+	width: 30px;
+    height: 30px; 
+} 
+
+label[for='black'] {
+	background-color: #000000;
+}
+label[for='orange'] {
+	background-color: #FF9800;
+}
+label[for='blue'] {
+	background-color: #2221f3;
+}
+label[for='red'] {
+	background-color: #F44336;
+}
+label[for='green'] {
+	background-color: #21f33c;
+}

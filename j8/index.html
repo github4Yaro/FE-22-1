@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            J8 Homework
+        </title>
+        <link href="../styles.css" rel="stylesheet"/>
+        <link href="j8.css" rel="stylesheet"/>
+        <script src="main.js">
+        </script>
+    </head>
+    <body>
+    	<div class="content">
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'marker')">
+                Marker
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'circle')">
+                Circule
+            </button>
+             <button class="tablinks" onclick="openTab(event, 'user')">
+                User generator
+            </button>
+        </div>
+        <!-- Tab content -->
+        <div class="tabcontent" id="marker" style="display: block;">
+            <div class="form">
+                <div class="colors">
+                    <input id="black" type="radio" name="color" value="#000000" checked>
+                    <label for="black"></label>
+
+                    <input id="orange" type="radio" name="color" value="#FF9800">
+                    <label for="orange"></label>
+
+                    <input id="blue" type="radio" name="color" value="#2221f3">
+                    <label for="blue"></label>
+
+                    <input id="red" type="radio" name="color" value="#F44336">
+                    <label for="red"></label>
+
+                    <input id="green" type="radio" name="color" value="#21f33c">
+                    <label for="green"></label>
+                </div>
+                <div>
+                    <label for="P_string">
+                        string to print:
+                    </label>
+                    <input id="P_string" type="text"/>
+                   
+                </div>
+
+                <div>
+                    <button onclick="print()">
+                       Print
+                    </button>
+                </div>
+
+                <div class="answer">
+                    <div class="text"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tabcontent" id="circle">
+            <div class="form">
+                <div>
+                    <label for="radius">
+                        set circle radius:
+                    </label>
+                    <input id="radius" type="text"/>
+                   
+                </div>
+                <div>
+                    <button onclick="demo()">Demo</button>
+                </div>   
+            </div>
+            <div class="answer">
+            	<div class="text"></div>
+            </div>
+        </div>
+        <div class="tabcontent" id="user">
+            <div class="form">
+                <div>
+                    <label for="male">
+                        male
+                    </label>
+                    <input id="male" type="radio" name="gender" onclick="user('male')"  value="male" checked/>
+                    <label for="female">
+                        female
+                    </label>
+                    <input id="female" type="radio" value="female" onclick="user('female')" name="gender" />
+                </div>
+            </div>
+            
+            <div class="answer">
+                <div class="text"></div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
