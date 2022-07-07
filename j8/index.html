@@ -19,8 +19,8 @@
             <button class="tablinks" onclick="openTab(event, 'circle')">
                 Circule
             </button>
-             <button class="tablinks" onclick="openTab(event, 'user')">
-                User generator
+             <button class="tablinks" onclick="openTab(event, 'ipcheck')">
+                IP count
             </button>
         </div>
         <!-- Tab content -->
@@ -78,17 +78,23 @@
             	<div class="text"></div>
             </div>
         </div>
-        <div class="tabcontent" id="user">
+        <div class="tabcontent" id="ipcheck">
             <div class="form">
                 <div>
-                    <label for="male">
-                        male
+                    <label for="ip1">
+                        First IP:
                     </label>
-                    <input id="male" type="radio" name="gender" onclick="user('male')"  value="male" checked/>
-                    <label for="female">
-                        female
+                    <input id="ip1" type="text"/>
+                </div>
+                <div>
+                    <label for="ip2">
+                        Last IP:
                     </label>
-                    <input id="female" type="radio" value="female" onclick="user('female')" name="gender" />
+                    <input id="ip2" type="text"/>
+                   
+                </div>
+                <div>
+                    <button onclick="ipcheck()">Count</button>
                 </div>
             </div>
             

@@ -67,11 +67,19 @@ function demo() {
 /// +++++IP++++ ////
 
 function ipsBetween(ip1, ip2) {
-	ip1Parts = ip1.split('.');
-	ip2Parts = ip2.split('.');
-	
+  	ip1 = ip1.split('.');
+  	return ip2.split('.').reduce(function(count, num, i) {
+    	return (count * 256) + Number(num) - Number(ip1[i])
+  	}, 0);
 }
 
+
+function ipcheck() {
+	const ip1 = document.getElementById('ip1').value;
+	const ip2 = document.getElementById('ip2').value;
+	const answ = `The count of IPs between ${ip1} and ${ip2} is ${ipsBetween(ip1, ip2)}`;
+	setAnswer(answ,'ipcheck');	
+}
 /// +++++IP++++ ////
 
 
