@@ -1,0 +1,354 @@
+.container {
+	row-gap: 0;
+	padding-top: 20px;
+    width: 40%;
+    display: inline-block;
+}
+.player {
+	width: 500px;
+	position: relative;
+	top: 40px;
+	left: 40%;	
+}
+
+.left-bar {
+	width: 60px;
+	height: 460px;
+	background: #444d56;
+	color: #707b86;
+	border-left: 1px solid #444d56;
+	border-radius: 10px;
+	display: inline-block;
+}
+.main {
+	background: url(m.jeckson.jpeg);
+    background-size: 410px 410px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: relative;
+    top: 15px;
+    left: -15px;
+    width: 318px;
+    height: 500px;
+    border: 1px solid #444d56;
+    background-color: #fff;
+    border-radius: 10px;
+    background-position: -50px 0px;
+}
+.button {
+	cursor: pointer;
+  	font-variation-settings:
+	  'FILL' 0,
+	  'wght' 400,
+	  'GRAD' 0,
+	  'opsz' 48	
+}
+
+.left-bar .button {
+	width: 40px;
+	height: 28px;
+	margin: auto;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+.left-bar .button.active {
+	color: #fff;
+}
+
+.left-bar .like.active{
+  font-variation-settings:
+	  'FILL' 1,
+	  'wght' 400,
+	  'GRAD' 0,
+	  'opsz' 48
+}
+
+.left-bar .sound-bar {
+	background-color: #616c77;
+	margin-top: 5px;
+	padding-bottom: 5px;
+}
+
+.left-bar .sound-bar .button{
+	color: #3d464f;
+	padding-top: 5px;
+}
+
+.left-bar .sound-bar .bar{
+	background-color: #3c454e;
+    border-radius: 10px;
+    width: 12px;
+    height: 90px;
+    margin-top: 5px;
+    margin-left: 20px;
+    position:relative; 
+}
+.left-bar .sound-bar .bar .progress{
+	background-color: #2f363d;
+    border-radius: 10px;
+    width: 12px;
+    height: 65%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.button::before {
+	font-family: 'Material Symbols Outlined';
+	font-size: 30px;
+	display: block;
+	content: '';
+}
+
+.left-bar .shuffle::before {
+	content: 'shuffle';
+}
+.left-bar .repeat::before {
+	content: 'repeat';
+}
+.left-bar .share::before {
+	content: 'forward';
+}
+.left-bar .add::before {
+	content: 'add_circle';
+}
+.left-bar .like::before {
+	content: 'favorite';
+}
+.left-bar .volume_down::before {
+	content: 'volume_down';
+}
+.left-bar .volume_mute::before {
+	content: 'volume_mute';
+}
+.left-bar .like.active::before {
+	color: #fe6960;
+}
+.left-bar .settings::before {
+	content: 'settings';
+}
+
+.player .info {
+	height: 290px;
+}
+.player .controls {
+	background-color: #fff;
+	height: 150px;
+}
+.player .controls .button {
+	background-color: #dce1e9;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+}
+
+.player .controls .back {
+	top: 37px;
+    left: 17px;
+}
+.player .controls .next {
+	top: -43px;
+    left: 223px;
+}
+
+.player .controls .play{
+	top: 45px;
+    left: -77px;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+}
+.player .controls .pause{
+	top: 45px;
+    left: 27px;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+}
+
+.player .controls .button::before {
+	font-size: 60px;
+	position: relative;
+	top: 4px;
+	left: 10px;	
+}
+
+.player .controls .back::before {
+	content: 'skip_previous';
+}
+
+.player .controls .next::before {
+	content: 'skip_next';
+}
+
+.player .controls .play::before {
+	top: 4px;
+    left: 10px;
+    font-size: 78px;
+	content: 'play_arrow';
+}
+
+.player .controls .pause::before {
+	top: 4px;
+    left: 10px;
+    font-size: 78px;
+	content: 'pause';
+}
+
+.player .name {
+	color: #e6eaee;
+	text-align: center;
+	height: 120px;
+	position: relative;
+	top:170px;
+	background-color: rgba(68, 77, 86, 0.5);
+}
+.player .title {
+	font-size: 30px;
+	padding-top: 10px;
+	margin-bottom: 0px;
+}
+.player .author {
+	margin-top: 0px;
+}
+.player .author a {
+	color: #e6eaee ;
+}
+
+.player .progress-bar {
+	position: relative;
+    top: 130px;
+	height: 40px;
+	color: #c4c5c7;
+	background-color: rgba(68, 77, 86, 0.5);
+}
+
+.player .time {
+	display: inline-block;
+	width: 40px;
+	padding-left: 20px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.player .progress-bar .bar {
+	display: inline-block;
+	width: 188px;
+	height: 15px;
+	background-color: #2f363d;
+	border-radius: 10px;
+}
+
+.player .progress-bar .bar .progress {
+	border-radius: 10px;
+    height: 15px;
+    width: 71%;	
+    background-color: #fe6960;
+}
+
+.player2 {
+	width: 370px;
+	position: relative;
+	top: 40px;
+	left: 40%;	
+	border: 1px solid #000;
+}
+
+.player2 .image{
+	background-image: url('halfmoonrun600.jpeg');
+	background-size: cover;
+	width: 345px;
+	height:360px;
+	margin: 12px;
+}
+.player2 .details {
+	margin: 20px;
+}
+.player2 .details {
+	margin: 20px;
+}
+
+.player2 .details .time {
+	font-size: 60px;
+	display: inline-block;
+	color: #f7a895;
+}
+.player2 .details .name {
+	display: inline-block;
+	padding-left: 10px;
+}
+.player2 .details .name .author {
+	font-size: 25px;
+}
+.player2 .details .name .title {
+	color: #bab6aa;
+}
+
+.player2 .progress-bar {
+	width: 370px;
+	height: 20px;
+	background-color: #e19484;
+}
+
+.player2 .progress-bar .progress {
+    height: 20px;
+    width: 78%;	
+    background-color: #f7a895;
+}
+.player2 .controls {
+	background-color: #5a4450;
+	height: 60px;
+}
+.player2 .controls .button{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	padding-top: 10px;
+}
+.pay_controls, .list_controls {
+	display: inline-block;
+}
+
+.player2 .controls .button{
+	padding-left: 10px;
+  font-variation-settings:
+	  'FILL' 1,
+	  'wght' 400,
+	  'GRAD' 0,
+	  'opsz' 48
+}
+.player2 .controls .pay_controls {
+	color: #fff;
+	padding-left: 15px;
+}
+.player2 .controls .list_controls {
+	float: right;
+	padding-right: 20px;
+}
+.player2 .controls .ff::before {
+	content: 'fast_forward';
+}
+.player2 .controls .pause::before {
+	content: 'pause';
+}
+.player2 .controls .rew::before {
+	content: 'fast_rewind';
+}
+
+.player2 .controls .repeat::before {
+	content: 'repeat';
+}
+.player2 .controls .forward::before {
+	content: 'forward';
+}
+
+
+
+
+
+
+
+
+
