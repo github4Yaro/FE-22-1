@@ -1,0 +1,52 @@
+
+body{
+	display: flex;
+	flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0;
+}
+
+div, header, footer, aside, main, body {
+	display: flex;	
+}
+header, footer {
+	background-color: #fdead9;
+	height: 100px;
+}
+aside{
+	background-color: #b8dee7;
+	width: 200px;
+}
+main {
+	flex: 1;
+	align-items:stretch;
+	justify-content: space-between;
+}
+
+.row {
+	flex:1;
+	justify-content:stretch;
+}
+.col {
+	flex: 1 1;
+	flex-direction: column;
+}
+.one {
+	background-color: #dce6f1;
+}
+.two{
+	background-color: #ebf1de;
+	flex:2;
+}
+.three{
+	background-color: #daeef3;
+	flex:1;
+}
+.four{
+	background-color: #f9bf8f
+}
+.five {
+	flex: 0.5;
+	background-color: #bfbfbf;
+}
