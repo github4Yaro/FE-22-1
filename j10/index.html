@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            J10 Homework
+        </title>
+        <link href="../styles.css" rel="stylesheet"/>
+        <link href="j10.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="content">
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'marker')">
+                Timer
+            </button>
+            
+        </div>
+        <!-- Tab content -->
+        <div class="tabcontent" id="marker" style="display: block;">
+            <div class="timer">
+            	<div class="col">
+	            	<div id="timer">00:00:0</div>
+	                <div class="row">
+	                	<button onclick="timer.start()">start</button>
+	                	<button onclick="timer.stop()">stop</button>
+	                </div>
+	                <div class="row">
+	                	<button onclick="timer.circle()">circle</button>
+	                	<button onclick="timer.pause()">pause</button>
+	                </div>
+	            </div>
+	            <div class="col">
+	            	<div class="circles">Circles</div>
+	            	<ul id="circle_list"></li>
+	            </div>
+	        </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    </body>
+
+</html>
