@@ -34,7 +34,7 @@ class Timer {
 	formatTime() {
 		const millisec = this.time % 10;
 		const sec = '0' + Math.trunc(this.time/10)%60;
-		const minutes = '0' + Math.trunc(Math.trunc(this.time/10)/60);
+		const minutes = '0' + Math.trunc(this.time/600);
 		return `${minutes.slice(-2)}:${sec.slice(-2)}:${millisec}`;
 	}
 }
