@@ -28,7 +28,7 @@ class Timer {
 		this.circleBlock.innerHTML = this.circles.reduce((html,circle)=> html + `<li>${circle}</li>`,'');
 	};
 	tick(){
-		this.time += 1;
+		this.time++;
 		this.timerBlock.innerText = this.formatTime();
 	};
 	formatTime() {
