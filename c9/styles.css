@@ -1,0 +1,164 @@
+:root {
+	--pos_top_1: 0px;
+	--pos_top_2: 25px;
+
+	--pos_left_1: 0px;	
+	--pos_left_2: 25px;
+	--pos_left_3: 50px;
+
+}
+
+@keyframes move {
+	from {
+		height: 30px;	
+	}
+
+	to {
+		height: 70px;
+	}
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes moveC {
+	0% {
+		left: var(--pos_left_3);
+		top: var(--pos_top_1);
+	}
+
+	25% {
+		left: var(--pos_left_1);
+		top: var(--pos_top_2);
+	}
+
+	75% {
+		left: var(--pos_left_1);
+		top: var(--pos_top_2);
+	}
+
+	100% {
+		left: var(--pos_left_3);
+		top: var(--pos_top_1);
+	}
+} 
+@keyframes moveB {
+	0% {
+		left: var(--pos_left_2);
+		top: var(--pos_top_1);
+	}
+	25% {
+		left: var(--pos_left_2);
+		top: var(--pos_top_1);
+	}
+
+	50% {
+		left: var(--pos_left_3);
+		top: var(--pos_top_1);
+	}
+
+	75% {
+		left: var(--pos_left_3);
+		top: var(--pos_top_1);
+	}
+	100% {
+		left: var(--pos_left_2);
+		top: var(--pos_top_1);
+	}
+}
+@keyframes moveG {
+	0% {
+		left: var(--pos_left_3);
+		top: var(--pos_top_2);
+	}
+	50% {
+		left: var(--pos_left_3);
+		top: var(--pos_top_2);
+	}
+	75% {
+		left: var(--pos_left_2);
+		top: var(--pos_top_1);
+	}
+
+	100% {
+		left: var(--pos_left_3);
+		top: var(--pos_top_2);
+	}
+}
+
+.container, .container2 {
+	display: flex;
+	width: 100px;
+	height: 500px;
+	margin: 0 auto;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.container>div {
+	display: flex;
+	background-color: #8282ed;
+	height: 50px;
+	width: 10px;
+	animation-name: move;
+	animation-duration: 0.25s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;	
+}
+
+.container div:nth-child(odd) {
+	animation-delay: 0.25s;
+}
+
+.container2 {
+	width: 90px;
+	height: 60px;
+	flex-wrap: wrap;
+	position: relative;
+	animation: rotate 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+.container2 div {
+	display: flex;
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	gap: 10px;
+	animation-iteration-count: infinite;
+} 
+
+
+.b {
+	left: var(--pos_left_2);
+	top: var(--pos_top_1);
+	background-color: red;
+	animation: moveB 8s;
+}
+.c {
+	left: var(--pos_left_3);
+	top: var(--pos_top_1);
+	background-color: #ff5722;
+	animation: moveC 8s;
+}
+
+.f {
+	left: var(--pos_left_2);
+	top: var(--pos_top_2);
+	background-color: #ff9800;
+}
+.g {
+	left: var(--pos_left_3);
+	top: var(--pos_top_2);
+	background-color: #ffc107;
+	animation: moveG 8s;
+}
