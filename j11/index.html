@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            J10 Homework
+        </title>
+        <link href="../styles.css" rel="stylesheet"/>
+        <link href="j11.css" rel="stylesheet"/>
+        <script src="../tabs.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="content">
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'watch')">
+                Clock
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'clicker')">
+                Clicker
+            </button>
+        </div>
+        <!-- Tab content -->
+        <div class="tabcontent" id="watch" style="display: block;">
+            <div class="container"> 
+                <div id="clock">
+                    <div id="date"></div>  
+                    <div id="time"></div>  
+                </div>
+            </div>
+        </div>
+        <div class="tabcontent" id="clicker">
+            <div class="container">
+                <div class="bar">
+                    <div class="">clicks:<div id="counter"></div></div>
+                    <div class="">time left:<div id="timer"></div></div>
+                    <div class="">clicks per min:<div id="avg"></div></div>
+                </div>
+                <div id="clickArea">
+                   <div></div> 
+                   <button class="btn" id="startBtn" onclick="clicker.start()">start</button>
+                </div>
+            </div>
+            <table id="statTable">
+                
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const clock = new Clock();
+        const clicker = new Clicker();
+    </script>
+    </body>
+
+</html>
