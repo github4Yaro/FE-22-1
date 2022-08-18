@@ -44,13 +44,7 @@ export class Dino{
 				new_H = SETTINGS.bg.max;	
 			}
 			this.cur_H = new_H;
-			clearInterval(this.id);
-			setTimeout(()=>{
-				this.dino_el.style = `bottom: ${new_H}px; transition: bottom 0.3s linear`;
-				setTimeout(()=>{
-					this.id = setInterval(()=>this.move(), 12);	
-				},300)
-			},12);
+			this.dino_el.style.bottom = `${new_H}px`;
 		}
 	}
 }
