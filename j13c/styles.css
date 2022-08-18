@@ -1,0 +1,17 @@
+#area{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    font-family: 'Material Symbols Outlined';
+	font-variation-settings:
+	  'FILL' 0,
+	  'wght' 400,
+	  'GRAD' 0,
+	  'opsz' 48
+}
+
+#area div {
+	align-items: center;
+    display: flex;
+    flex-direction: column;
+}
