@@ -1,0 +1,189 @@
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: -1170px 0; }
+}
+
+@font-face {
+  font-family: dino-font;
+  src: url('Dino.ttf');
+}
+
+body {
+	font-family: dino-font;
+	color: #d05e22;
+	font-size: 50px;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-image:url('img/Bgl/Layer_0011_0.png');
+}
+
+main {
+	display: flex;
+}
+
+#bg{
+	position: absolute;
+	bottom:100px;
+	width: 100%;
+}
+
+footer {
+	position: absolute;
+	bottom:0px;
+	height: 100px;
+	width: 100%;
+	background-color: #0c1122;
+	display: flex;
+	justify-content: center;
+}
+
+
+#bg>div{
+	width: 100%;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    background-size: contain;
+    height: 1000px;
+    position: absolute;
+    bottom: 0px;
+}
+
+#bg>div::before, #bg>div::after {
+	content: '';
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    background-size: contain;
+    display: flex;
+    height: 1000px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;	
+}
+
+#bg.active div, #bg.active div::before, #bg.active div::after{
+	animation: animatedBackground 3s linear infinite;	
+}
+
+#bg.finished div, #bg.finished div::before, #bg.finished div::after{
+	animation-play-state: paused;	
+}
+
+.grace{
+	background-image:url('img/Bgl/Layer_0001_8.png');	
+}
+.tree{
+	background-image: url(img/Bgl/Layer_0005_5.png);
+}
+.light {
+	background-image: url(img/Bgl/Layer_0004_Lights.png);
+}
+.grace::before{
+	background-image:url('img/Bgl/Layer_0001_8.png');		
+}
+.tree::before {
+	background-image: url(img/Bgl/Layer_0003_6.png);
+}
+.light::before {
+	background-image: url(img/Bgl/Layer_0007_Lights.png);
+}
+.tree::after {
+	background-image: url(img/Bgl/Layer_0002_7.png);
+}
+
+.grace::after {
+	background-image: url(img/Bgl/Layer_0000_9.png);
+}
+.info {
+	z-index: 500;
+	display: flex;
+	width: 100%;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+}
+#story {
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	font-size: 30px;
+	flex-basis: 100%;
+	color: #fff;
+	padding-top: 80px;
+}
+#story a {
+	color: #fff;
+	font-size: 40px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+
+.scores_block {
+	display: flex;
+	font-size: 22px;
+	flex-direction: column;
+}
+.canvas_container {
+	display: flex;
+	justify-content: end;
+	align-items:end;
+}
+
+#title {
+	display: flex;
+    font-size: 150px;
+    align-self: center;
+}
+#fuel{
+	display: flex;
+    width: 120px;
+    gap: 5px;
+    background-position-x: -11px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(img/fuel.png);
+    justify-content: flex-end;
+}
+#fuel:before{
+	content: 'x';
+	padding-right: 20px;
+	position: relative;
+	left: 20px;
+	width: 30px;
+    height: 50px;
+}
+
+#best:before{
+	content: 'BEST';
+	padding-right: 20px;
+}
+
+#dino {
+	z-index: 1000;
+	background-image: url(img/dinos.png);
+    position: fixed;
+    bottom: 140px;
+    left: 250px;
+    width: 190px;
+    height: 116px;
+    background-position: 330px -130px;
+}
+#area {
+
+	width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+}
+.fuel {
+	z-index: 900;
+	position: fixed;
+	width: 50px;
+    height: 50px;
+    left: 1500px;
+    background-size: contain;
+    background-image: url(img/fuel.png);
+}
+
