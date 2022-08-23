@@ -1,0 +1,32 @@
+body {
+	margin:0;
+	padding: 0;
+}
+.container{
+	display: grid;
+	grid-template-rows: 200px 200px 300vh 100px;
+	grid-template-columns: 25% 50% 25%; 
+}
+header {
+	grid-column: 1 / span 3;
+	background-color: #ead1dc;
+}
+nav.left {
+	background-color: #d0e0e3;
+}
+nav.right {
+	background-color: #c9daf8;
+}
+main {
+	background-color: #fdf2cc;
+	grid-row: 2 / 4;
+	grid-column: 2/3;
+}
+aside {
+	background-color: #fce5cd;
+	grid-row: 3 / 5;
+}
+
+footer {
+	background-color: #d9d2e9;
+}

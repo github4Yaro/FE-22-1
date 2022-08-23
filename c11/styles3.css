@@ -1,0 +1,32 @@
+body {
+	margin:0;
+	padding: 0;
+	
+}
+.container{
+	display: grid;
+	grid-template-rows: 50px 100vh;
+	grid-template-columns: repeat(4,25%); 
+	height: 100vh;
+}
+
+aside{
+	grid-row:1 / -1;
+}
+aside.left{
+	background-color: #d0e0e3;
+}
+aside.right{
+	background-color: #cfe2f3;
+}
+header{
+	background-color: #ead1dc;
+	grid-column: 2/4;
+	grid-row:1 / 2;
+}
+.center.left {
+	background-color: #fdf2cc;
+}
+.center.right{
+	background-color: #fce5cd;	
+}

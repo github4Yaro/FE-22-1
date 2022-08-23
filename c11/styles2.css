@@ -1,0 +1,28 @@
+body {
+	margin:0;
+	padding: 0;
+	
+}
+.container{
+	display: grid;
+	grid-template-rows: 200px 1fr;
+	grid-template-columns: 10% 800px 1fr; 
+	height: 100vh;
+}
+nav{
+	background-color: #ead1dc;
+	grid-row:1 / -1;
+}
+main {
+	background-color: #fdf2cc;
+	grid-row: 1 / -1;
+}
+nav.right{
+	background-color: #c9daf8;
+	grid-row:1 / 1;
+}
+aside{
+	background-color: #fce5cd;
+	grid-row:2 / 2;
+	grid-column: 3/3;
+}
