@@ -5,11 +5,13 @@ class Game{
 	solved = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 	empty = 15;
 	moves = 0;
+	best_scores = 0;
 	mixed_blocks = [];
 	
 	constructor() {
 		this.newGameBtn.addEventListener('click',()=>this.startGame());
 		this.startGame();
+		this.best_scores = (localStorage.getItem('best_scores'))?localStorage.getItem('best_scores'):0;
 		
 	};
 	startGame() {
@@ -31,6 +33,10 @@ class Game{
 
 	endGame() {
 		const message_text = `You win in ${this.moves} moves`;
+		if(this.moves<this.best_scores){
+			this.best_scores = this.moves;
+			localStorage.setItem('best_scores',this.moves);
+		}
 		this.message.innerText = message_text;
 		this.message.parentElement.classList.add("game-won");
 	}
