@@ -2,6 +2,7 @@ class Game{
 	playgraund = document.querySelector('.game-container .tile-container');
 	newGameBtn = document.querySelector('.game-container .retry-button');
 	message = document.querySelector('.game-message p');
+	bestScoresBlock = document.getElementById('best_scores');
 	solved = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 	empty = 15;
 	moves = 0;
@@ -10,32 +11,27 @@ class Game{
 	
 	constructor() {
 		this.newGameBtn.addEventListener('click',()=>this.startGame());
+		this.best_scores = (localStorage.getItem('best_scores'))?localStorage.getItem('best_scores'):1000;
+
 		this.startGame();
-		this.best_scores = (localStorage.getItem('best_scores'))?localStorage.getItem('best_scores'):0;
 		
 	};
 	startGame() {
 
-		this.message.parentElement.classList.remove("game-won");
-		this.playgraund.innerHTML = '';
-
+		
 		this.mixed_blocks = [...this.solved];
 		this.shuffle();
 		this.print();
 		this.moves = 0;
 		
-
-		const tiles = document.getElementsByClassName('tile');
-		for (let i=0; i<tiles.length; i++) {
-			tiles[i].addEventListener('click', (el) => this.move(tiles[i]));
-		}
 	}
 
 	endGame() {
 		const message_text = `You win in ${this.moves} moves`;
-		if(this.moves<this.best_scores){
+		if(this.moves < this.best_scores){
 			this.best_scores = this.moves;
-			localStorage.setItem('best_scores',this.moves);
+			localStorage.setItem('best_scores', this.moves);
+			this.bestScoresBlock.innerText = this.best_scores;
 		}
 		this.message.innerText = message_text;
 		this.message.parentElement.classList.add("game-won");
@@ -74,6 +70,9 @@ class Game{
 	};
 
 	print(){
+		this.message.parentElement.classList.remove("game-won");
+		this.playgraund.innerHTML = '';
+
 		for(let index = 0; index < 15; index++) {
 			const i = Math.floor(index/4);
 			const j = index - i * 4;
@@ -87,11 +86,19 @@ class Game{
 				inner_el.className = "tile-inner";
 				inner_el.innerText = num;
 				el.append(inner_el);
+				el.addEventListener('click', (ev)=>this.move(el));
 			}
+
 			this.playgraund.append(el);	
+			
+		}
+		console.log(this.best_scores);
+		if(this.best_scores < 1000) {
+			this.bestScoresBlock.innerText = this.best_scores;	
 		}
 	};
 	move(el){
+		
 		let pos = el.dataset.pos;
 		const diff = Math.abs(pos - this.empty);
 
