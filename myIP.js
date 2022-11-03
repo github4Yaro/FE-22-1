@@ -1,5 +1,5 @@
-const IPlink = 'http://ip-api.com/json/';
-const GAPI = 'http://www.7timer.info/bin/astro.php?ac=0&lang=en&unit=metric&output=internal&tzshift=0';
+const IPlink = '//ip-api.com/json/';
+const GAPI = '//www.7timer.info/bin/astro.php?ac=0&lang=en&unit=metric&output=internal&tzshift=0';
 
 	fetch(IPlink).then(r => r.json()).then( data => {
 		const IPaddr = document.getElementById('ipAddr');
