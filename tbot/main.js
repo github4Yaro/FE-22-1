@@ -7,7 +7,7 @@
     const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
 
     const userInfoLabel = document.getElementById('user_info');
-    userInfoLabel.innerText = ${JSON.stringify(initDataUnsafe.user)};
+    userInfoLabel.innerText = JSON.stringify(initDataUnsafe.user);
 
     
     //check if record exist
