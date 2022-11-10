@@ -7,12 +7,11 @@
     const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
 
     const userInfoLabel = document.getElementById('user_info');
-    userInfoLabel.innerText = "";//`${JSON.stringify(initData.user.first_name)}`;
+    userInfoLabel.innerText = ${JSON.stringify(initDataUnsafe.user.first_name)};
 
     
     //check if record exist
 
-    debug.innerText = JSON.stringify(initDataUnsafe);
     
 
 	Telegram.WebApp.MainButton
