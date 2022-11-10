@@ -12,7 +12,7 @@
     
     //check if record exist
 
-    debug.innerText = JSON.stringify(initData);
+    debug.innerText = JSON.stringify(initDataUnsafe);
     
 
 	Telegram.WebApp.MainButton
