@@ -12,9 +12,9 @@
     
     //check if record exist
 
-    debug.innerText = JSON.stringify(initDataUnsafe.user);
+    debug.innerText = JSON.stringify(initDataUnsafe.user.first_name);
     
-
+    
 	Telegram.WebApp.MainButton
         .setText('Закрыть окно')
         .show()
