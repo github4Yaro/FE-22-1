@@ -6,7 +6,7 @@
     const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
 
     const userInfoLabel = document.getElementById('user_info');
-    userInfoLabel.innerText = `${Telegram.WebAppUser.first_name} ${Telegram.WebAppUser.last_name}`
+    userInfoLabel.innerText = `${Telegram.WebAppUser}`
 
 	Telegram.WebApp.MainButton
         .setText('Закрыть окно')
