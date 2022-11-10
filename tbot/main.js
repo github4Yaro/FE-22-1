@@ -1,11 +1,15 @@
+	const userInfo = document.getElementById('user_info');
 
 	Telegram.WebApp.ready();
 
     const initData = Telegram.WebApp.initData || '';
     const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
 
+    const userInfoLabel = document.getElementById('user_info');
+    userInfoLabel.innerText = `${Telegram.WebAppUser.first_name} ${Telegram.WebAppUser.last_name}`
+
 	Telegram.WebApp.MainButton
-        .setText('CLOSE WEBVIEW')
+        .setText('Закрыть окно')
         .show()
         .onClick(function(){ webviewClose(); });
 
