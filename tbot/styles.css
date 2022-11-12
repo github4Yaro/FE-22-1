@@ -1,0 +1,60 @@
+table {
+	background: #f6f4f5;
+	color: #727676;
+	font-family: 'Inconsolata', monospace;
+	font-weight: 400;
+	border-spacing: 20px;
+	cursor: pointer;
+}
+
+th {
+	width: 50px;
+	font-weight: 400;
+	font-size: 16px;
+}
+tr {
+	height: 30px;
+}
+td {
+	text-align: center;
+    font-size: 14px;
+}
+span.selected {
+	color: #f6a0a0;
+}
+span.innective {
+	color: #cfc8c9;
+}
+td span{
+	display: inline-block;
+	width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+td span:hover {
+    background-color: #f6a0a0;
+    color: #fff;
+    border-radius: 9px;
+}
+
+caption ul {
+	padding:0;
+}
+caption li {
+	color: #cfc8c9;
+	display: inline-block;
+	text-transform: uppercase;
+	font-size:12px;
+	list-style:none;
+	font-family: monospace;
+	width: 3ch;
+    overflow: hidden;
+    white-space: nowrap;
+}
+caption li:hover,  caption li.active{
+	display: inline;
+	font-size:16px;
+	font-weight: bold;
+	color: #727676;
+}

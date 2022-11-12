@@ -3,15 +3,34 @@
 <head>
 	<title>Makup helper</title>
 	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 	<div class="container">
 
 		<h1 class="d-flex justify-content-center">Welcome, <span id='user_info'> </span></h1>
 		<div class="row pt-2">
+			<div class="col d-flex justify-content-evenly" id="next_visit">
+				У Вас пока еще нет записи к мастеру
+			</div>
+		</div>
+		<div class="row">
 			<div class="col d-flex justify-content-evenly">
-				<input class="btn btn-primary" type="button" value="Записаться">
+				<div id="calWrap">
+					<div id="monthSelector"></div>
+					<table id="calDays">
+
+					</table>
+					<div id="slotSelector"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row pt-2">
+			<div class="col d-flex justify-content-evenly">
+				<input class="btn btn-primary" id='sing_up' type="button" value="Записаться">
 			</div>
 			<div class="col d-flex justify-content-evenly">
 				<input class="btn btn-primary" type="button" value="Проверить запись">
@@ -28,6 +47,6 @@
 		</div>
 		<div id='debug'></div>
 	</div>
-	<script type="text/javascript" src="main.js"></script>
+	<script src="main.js" type="module"></script>
 </body>
 </html>

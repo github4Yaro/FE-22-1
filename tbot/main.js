@@ -1,25 +1,32 @@
+import webApp from "./components/webApp.js";
 	
-	const debug = document.getElementById('debug');
+export const main = new webApp();
+	
 
-	Telegram.WebApp.ready();
+    
 
-    const initData = Telegram.WebApp.initData || '';
-    const initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};
-
-    const userInfoLabel = document.getElementById('user_info');
-    userInfoLabel.innerText = initDataUnsafe.user.first_name;
+    
+    
 
     
     //check if record exist
 
-    debug.innerText = JSON.stringify(initDataUnsafe.user.first_name);
-    
+   // debug.innerText = JSON.stringify(initDataUnsafe.user.first_name);
+   
+   /* 
+    singUpBtn.addEventListener('click', calendar)
 
-	Telegram.WebApp.MainButton
-        .setText('Закрыть окно')
-        .show()
-        .onClick(function(){ webviewClose(); });
+	
+
+    fetch('./data.json').then(r => r.json()).then(d => console.log(d));
+    fetch('./next_visit.json').then(r => r.json()).then(d => {
+    	if(d.length > 0) {
+    		const date = d[0];
+    		nextVisitDate.innerText = `Вы записаны к мастеру ${date.date} на ${date.time}`;
+    	}
+    });
 
 	function webviewClose() {
-        Telegram.WebApp.close();
+        
     }
+    */
