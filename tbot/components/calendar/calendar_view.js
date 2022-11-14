@@ -57,7 +57,6 @@ export default class calendarView {
 	}
 
 	render = (html, start, end, j, records = {}) => {
-		console.log(records);
 		
 		for(let i = start; i <= end; i++) {
 			if(j == 1){
