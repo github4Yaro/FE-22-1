@@ -11,8 +11,11 @@ export default class calendarController {
 
 	init = () => {
 		const month = moment().format('MM');
-		this.model.getMonthRecords(month, this.userID);
+		const year =  moment().format('YYYY');
+		this.model.getMonthRecords(month, year, this.userID);
 	};
+
+	selectMonth = (month, year) => this.model.getMonthRecords(month, year, this.userID);
 
 	handleUpdate = (records) => {
 		this.view.renderCalendar(records);

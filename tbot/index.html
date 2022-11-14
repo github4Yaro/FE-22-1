@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 
-		<h1 class="d-flex justify-content-center">Welcome, <span id='user_info'> </span></h1>
+		<h1 class="d-flex justify-content-center">Вiтаемо, <span id='user_info'> </span></h1>
 		<div class="row pt-2">
 			<div class="col d-flex justify-content-evenly" id="next_visit">
 				У Вас пока еще нет записи к мастеру
@@ -19,11 +19,30 @@
 		</div>
 		<div class="row">
 			<div class="col d-flex justify-content-evenly">
-				<div id="calWrap">
-					<div id="monthSelector"></div>
-					<table id="calDays">
-
+				<div id="calWrap" class="pt-3">
+					<div id="monthSelector" class="row d-flex justify-content-center"></div>
+					<table class="table">
+						<thead>
+						    <tr>
+						     	<th scope="col">Пн</th>
+						      	<th scope="col">Вт</th>
+						      	<th scope="col">Ср</th>
+						      	<th scope="col">Чт</th>
+						      	<th scope="col">Пт</th>
+						      	<th scope="col">Сб</th>
+						      	<th scope="col">Нд</th>
+						    </tr>
+						 </thead>
+						 <tbody id="calDays">
+						 	
+						 </tbody>
 					</table>
+					<div>
+
+						<table class="table collapse" id="calLegend">
+							
+						</table>
+					</div>
 					<div id="slotSelector"></div>
 				</div>
 			</div>
@@ -39,10 +58,10 @@
 
 		<div class="row pt-2">
 			<div class="col d-flex justify-content-evenly">
-				<input class="btn btn-primary" type="button" value="Локация">
+				<input class="btn btn-primary" type="button" value="Локацiя">
 			</div>
 			<div class="col d-flex justify-content-evenly">
-				<input class="btn btn-primary" type="button" value="Галерея">
+				<input class="btn btn-primary" type="button" value="Мои работи">
 			</div>
 		</div>
 		<div id='debug'></div>

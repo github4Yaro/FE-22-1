@@ -1,5 +1,5 @@
 table {
-	background: #f6f4f5;
+	/*background: #f6f4f5;*/
 	color: #727676;
 	font-family: 'Inconsolata', monospace;
 	font-weight: 400;
@@ -8,34 +8,60 @@ table {
 }
 
 th {
-	width: 50px;
-	font-weight: 400;
-	font-size: 16px;
+	text-align: center;
 }
 tr {
 	height: 30px;
 }
-td {
+#calDays td {
 	text-align: center;
     font-size: 14px;
+  /*  padding: 0px 0px; */
 }
-span.selected {
-	color: #f6a0a0;
-}
-span.innective {
-	color: #cfc8c9;
-}
-td span{
+
+#calDays td span, #calLegend td span{
 	display: inline-block;
 	width: 30px;
     height: 30px;
     line-height: 30px;
+    border-radius: 9px;
 }
 
-td span:hover {
+#calDays td span.selected, #calLegend td span.selected {
+	background-color: #9eeaf9;
+}
+#calDays td span.inactive, #calLegend td span.inactive {
+	background-color: #adb5bd;	
+}
+
+#calDays td span.active, #calLegend td span.active {
+	background-color: #d1e7dd;
+}
+#calDays td span.day_off, #calLegend td span.day_off {
+	background-color: #f1aeb5;
+}
+#calDays td span.self, #calLegend td span.self {
+	background-color: #ffc107;
+}
+#calDays td span.active.no_slots, #calLegend td span.active.no_slots {
+	background: linear-gradient(to right, #d1e7dd 50%, #f1aeb5 50%), linear-gradient(to right, #d1e7dd 50%, #f1aeb5 50%);
+	background-size: 20% 100%;
+  	background-position: center left, center right;
+  	background-repeat: repeat;
+  	cursor: not-allowed;
+}
+#calLegend td span.legend {
+	cursor: pointer;
+	width: 300px;
+}
+
+#calDays td span:hover {
     background-color: #f6a0a0;
     color: #fff;
-    border-radius: 9px;
+}
+
+#calDays td span.inactive:hover {
+    cursor: not-allowed;
 }
 
 caption ul {
