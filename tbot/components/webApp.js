@@ -15,8 +15,8 @@ export default class webApp {
 
     	this.userInfoLabel.innerText = (this.user)?this.user.first_name:'';
 
-
-    	const calendar = new calendarController(this.user.id || 1234567890);
+    	debug.innerText = this.user.id;
+    	const calendar = new calendarController(this.user.id || '1234567890');
 		calendar.init();
 
     	Telegram.WebApp.MainButton

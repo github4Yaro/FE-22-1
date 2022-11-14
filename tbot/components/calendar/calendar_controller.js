@@ -3,7 +3,7 @@ import calendarView from './calendar_view.js'
 
 export default class calendarController {
 
-	constructor(userID = '1234567890') {
+	constructor(userID) {
 		this.model = new calendarModel(this.handleUpdate);
 		this.view = new calendarView();
 		this.userID = userID;
