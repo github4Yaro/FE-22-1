@@ -27,6 +27,10 @@ export default class calendarView {
 		this.calendarDOM = document.getElementById('calDays');
 		this.legendDom = document.getElementById('calLegend');
 		this.monthSelector = document.getElementById('monthSelector');
+		this.slotSelector = document.getElementById('slotSelectorBody');
+		this.slotPopup = new bootstrap.Modal(document.getElementById('slotSelector'), {
+		 	keyboard: false
+		});
 		[this.curDay, this.curMonth, this.curYear] = moment().format('D MM YYYY').split(' ');
 	}
 
@@ -34,13 +38,13 @@ export default class calendarView {
 		
 		this.renderBody(records);
 		this.renderLegend();
-		this.renderMonthSelect(records.month, records.year);
+		this.renderMonthSelect();
 	}
 
-	renderMonthSelect = (selectedMonth, selectedYear) => {
+	renderMonthSelect = () => {
 
-		const [nextMonth, nextYear] = (selectedMonth == 12)?[1, +selectedYear+1]:[+selectedMonth+1, +selectedYear];
-		const [prevMonth, prevYear] = (selectedMonth == 1)?[12, selectedYear-1]:[selectedMonth-1, +selectedYear];
+		const [nextMonth, nextYear] = (calendar.month == 12)?[1, +calendar.year+1]:[+calendar.month+1, +calendar.year];
+		const [prevMonth, prevYear] = (calendar.month == 1)?[12, calendar.year-1]:[calendar.month-1, +calendar.year];
 		
 		this.monthSelector.innerHTML = '';
 
@@ -51,7 +55,7 @@ export default class calendarView {
 		this.monthSelector.appendChild(prevBtn);
 
 		const monthTitle = document.createElement("div");
-		monthTitle.innerText = this.monthNames[+selectedMonth];
+		monthTitle.innerText = this.monthNames[+calendar.month];
 		monthTitle.classList = 'w-50 text-center';
 		this.monthSelector.appendChild(monthTitle);
 
@@ -69,8 +73,8 @@ export default class calendarView {
 	}
 
 	renderBody = (records)=>{
-		const rMonth = '0'+records.month;
-		const momentObj = moment(`${records.year}-${rMonth.slice(-2)}`);
+
+		const momentObj = calendar.selectedMoment;
 		const endOfMonth = momentObj.daysInMonth();
 		const startOfMonth = +momentObj.startOf('month').format('d');
 	
@@ -88,6 +92,10 @@ export default class calendarView {
 			[monthHTML,j] = this.render(monthHTML, 1, endOfWeek, j);
 		}
 		this.calendarDOM.innerHTML = monthHTML;
+		const activeDays = this.calendarDOM.querySelectorAll('.free_slots');
+		for (const day of activeDays) {
+		  	day.addEventListener('click', (el)=>{ calendar.selectDay(el.target.dataset.day)});
+		}
 	}
 
 	render = (html, start, end, j, records = {}) => {
@@ -107,6 +115,19 @@ export default class calendarView {
 		}
 		return [html, j];
 	}
+
+	renderSlots = (slots) => {
+		
+		let slotsHTML = ''
+
+		for (const time in slots) {
+			const disabled = (slots[time] == 'open')? '' : 'disabled';
+			slotsHTML += `<input type="radio" class="btn-check" name="slot" id="slot_${time}" autocomplete="off" ${disabled}>
+				<label class="btn btn-secondary" for="slot_${time}">${time}</label>`;
+		}
+		this.slotSelector.innerHTML = slotsHTML
+		this.slotPopup.show();
+	}
 	
 	#getClass = (records, i) => {
 
@@ -114,11 +135,11 @@ export default class calendarView {
 		let cls = 'inactive';
 		let self = false;
 
-		const is_past = (records.year < this.curYear)?true:(records.year == this.curYear && records.month < this.curMonth);
+		const is_past = (calendar.year < this.curYear)?true:(calendar.year == this.curYear && calendar.month < this.curMonth);
 
 		if(records.days != undefined) {
 
-			if(records.month == this.curMonth && records.year == this.curYear) {
+			if(calendar.month == this.curMonth && calendar.year == this.curYear) {
 				checkDay = true;	
 			}
 
@@ -149,6 +170,6 @@ export default class calendarView {
 		return cls;
 	}
 
-	renderDay = (day, cls) => `<td><span class="${cls}">${day}</span></td>`;
+	renderDay = (day, cls) => `<td><span class="${cls}" data-day="${day}">${day}</span></td>`;
 
 }

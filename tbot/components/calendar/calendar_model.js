@@ -20,8 +20,6 @@ export default class calendarModel {
 		let url = `${this.url}?month=${month}&year=${year}`;
 		fetch(url).then(r=>r.json()).then(d => {
 			const records = {
-				month:month,
-				year:year,
 				days:[]
 			};
 			const daysInMonth = moment().daysInMonth();
