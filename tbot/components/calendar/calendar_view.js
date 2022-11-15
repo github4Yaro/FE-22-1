@@ -127,10 +127,12 @@ export default class calendarView {
 		
 		let slotsHTML = ''
 		let i = 0;
+		console.log(slots);
 		for (const time in slots) {
 			const disabled = (slots[time] == 'open')? '' : 'disabled';
+			const cls = (slots[time] == 'self')?'btn-warning':'btn-info';
 			slotsHTML += `<input type="radio" class="btn-check" name="slot" id="slot_${time}" autocomplete="off" ${disabled}>
-				<label class="btn btn-secondary btn-sm m-2" for="slot_${time}">${time}</label>`;
+				<label class="btn ${cls} btn-sm m-2" for="slot_${time}">${time}</label>`;
 			if (i == 2) {
 				slotsHTML += `<br/>`;	
 			}
