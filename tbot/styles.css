@@ -36,7 +36,7 @@ tr {
 	background-color: #9eeaf9;
 }
 #calDays td span.inactive, #calLegend td span.inactive {
-	background-color: #adb5bd;	
+	background-color: #ebf1f6;	
 }
 
 #calDays td span.active, #calLegend td span.active {

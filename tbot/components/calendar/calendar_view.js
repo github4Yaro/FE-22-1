@@ -1,5 +1,6 @@
 export default class calendarView {
 
+	calRowsCount = 0;
 	legend = [
 		{cls:'inactive',title:'нема запису'},
 		{cls:'day_off',title:'вихiдний'},
@@ -77,9 +78,11 @@ export default class calendarView {
 		const momentObj = calendar.selectedMoment;
 		const endOfMonth = momentObj.daysInMonth();
 		const startOfMonth = +momentObj.startOf('month').format('d');
+		this.calRowsCount = 0;
 	
 		let j = 1;
 		let monthHTML = '';
+
 		if(startOfMonth != 1) {
 			const endOfPrMonth = momentObj.subtract(1,'month').daysInMonth();
 			const diff = (startOfMonth == 0)?5:(startOfMonth-2);
@@ -87,9 +90,12 @@ export default class calendarView {
 			[monthHTML,j] = this.render(monthHTML, startOfPrMonth, endOfPrMonth, j);
 		}
 		[monthHTML,j] = this.render(monthHTML, 1, endOfMonth, j, records);
+		const endOfWeek = 7 - j + 1;
 		if(j != 1) {
-			const endOfWeek = 7 - j + 1;
 			[monthHTML,j] = this.render(monthHTML, 1, endOfWeek, j);
+		}
+		if(this.calRowsCount == 5) {
+			[monthHTML,j] = this.render(monthHTML, endOfWeek+1, endOfWeek+7, j);	
 		}
 		this.calendarDOM.innerHTML = monthHTML;
 		const activeDays = this.calendarDOM.querySelectorAll('.free_slots');
@@ -110,6 +116,7 @@ export default class calendarView {
 			if(j == 7){
 				html+='</tr>';
 				j = 0;
+				this.calRowsCount++;
 			}
 			j++;
 		}
