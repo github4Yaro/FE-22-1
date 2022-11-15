@@ -13,7 +13,7 @@ export default class calendarModel {
 
 	constructor(controllerHandleUpdate){
         this.controllerHandleUpdate = controllerHandleUpdate;
-        this.url = '//yarotbot.tk/getData'; 
+        this.url = 'https://yarotbot.tk/getData'; 
     }
 	
 	getMonthRecords = (month, year, userID) => {
