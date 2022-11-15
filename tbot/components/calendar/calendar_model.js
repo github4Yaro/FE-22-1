@@ -13,7 +13,7 @@ export default class calendarModel {
 
 	constructor(controllerHandleUpdate){
         this.controllerHandleUpdate = controllerHandleUpdate;
-        this.url = './data.json'; 
+        this.url = '//ec2-18-233-147-122.compute-1.amazonaws.com/getData'; 
     }
 	
 	getMonthRecords = (month, year, userID) => {

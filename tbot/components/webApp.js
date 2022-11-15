@@ -15,9 +15,8 @@ export default class webApp {
 
     	this.userInfoLabel.innerText = (this.user)?this.user.first_name:'';
 
-    	debug.innerText = this.user.id;
-    	const calendar = new calendarController(this.user.id || 296223874);
-		//calendar.init();
+    	calendar = new calendarController(this.user.id || 296223874);
+		calendar.init();
 
     	Telegram.WebApp.MainButton
 	        .setText('Закрыть окно')
