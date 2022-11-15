@@ -23,10 +23,10 @@ export default class calendarView {
 	}
 
 	renderMonthSelect = () => {
-		const next = `<div class="col-1 m_btn">></div>`;
-		const title = `<div class="w-50 text-center">TITLE</div>`;
-		const prev = `<div class="col-1 m_btn"><</div>`;
-		let monthHTML = `${prev}${title}${next}`;
+		const nextBtn = `<div class="col-1 m_btn">></div>`;
+		const titleTxt = `<div class="w-50 text-center">TITLE</div>`;
+		const prevBtn = `<div class="col-1 m_btn"><</div>`;
+		let monthHTML = `${prevBtn}${titleTxt}${nextBtn}`;
 		this.monthSelector.innerHTML = monthHTML;
 	}
 
@@ -80,7 +80,7 @@ export default class calendarView {
 		let cls = 'inactive';
 		let self = false;
 
-		if(Object.hasOwn(records,'days')) {
+		if(records.days != undefined) {
 
 			if(records.month == this.curMonth && records.year == this.curYear) {
 				checkDay = true;	
