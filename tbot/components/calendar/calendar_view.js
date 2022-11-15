@@ -126,11 +126,15 @@ export default class calendarView {
 	renderSlots = (slots) => {
 		
 		let slotsHTML = ''
-
+		let i = 0;
 		for (const time in slots) {
 			const disabled = (slots[time] == 'open')? '' : 'disabled';
 			slotsHTML += `<input type="radio" class="btn-check" name="slot" id="slot_${time}" autocomplete="off" ${disabled}>
-				<label class="btn btn-secondary btn-sm" for="slot_${time}">${time}</label>`;
+				<label class="btn btn-secondary btn-sm m-2" for="slot_${time}">${time}</label>`;
+			if (i == 2) {
+				slotsHTML += `<br/>`;	
+			}
+			i++;
 		}
 		this.slotSelector.innerHTML = slotsHTML
 		this.slotPopup.show();
