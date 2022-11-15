@@ -13,6 +13,11 @@ th {
 tr {
 	height: 30px;
 }
+
+.m_btn {
+	cursor: pointer;
+}
+
 #calDays td {
 	text-align: center;
     font-size: 14px;

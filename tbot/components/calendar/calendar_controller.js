@@ -15,7 +15,7 @@ export default class calendarController {
 		this.model.getMonthRecords(month, year, this.userID);
 	};
 
-	selectMonth = (month, year) => this.model.getMonthRecords(month, year, this.userID);
+	selectMonth = (month, year) => {this.model.getMonthRecords(month, year, this.userID)};
 
 	handleUpdate = (records) => {
 		this.view.renderCalendar(records);

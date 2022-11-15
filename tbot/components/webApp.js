@@ -21,7 +21,7 @@ export default class webApp {
     	Telegram.WebApp.MainButton
 	        .setText('Закрыть окно')
 	        .show()
-	        .onClick(function(){console.log('clicked'); Telegram.WebApp.close()});
+	        .onClick(function(){Telegram.WebApp.close()});
 	}
 
 	webviewClose = () => Telegram.WebApp.close();
