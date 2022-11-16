@@ -17,7 +17,7 @@ export default class calendarModel {
     }
 	
 	getMonthRecords = (month, year, userID) => {
-		const url = `${this.url}getData?month=${month}&year=${year}`;
+		const url = `${this.url}getData?month=${month}&year=${year}&key=${window.hash}`;
 		fetch(url).then(r=>r.json()).then(d => {
 			const records = {
 				days:[]
