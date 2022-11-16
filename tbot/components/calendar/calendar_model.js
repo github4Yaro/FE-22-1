@@ -1,5 +1,5 @@
 export default class calendarModel {
-	apiAction = 'getRecords';
+	
 	CLOSED_SLOT = 'closed';
 	SELF_SLOT = 'self';
 	DEF_SLOTS = {
@@ -13,11 +13,11 @@ export default class calendarModel {
 
 	constructor(controllerHandleUpdate){
         this.controllerHandleUpdate = controllerHandleUpdate;
-        this.url = 'https://yarotbot.tk/getData'; 
+        this.url = 'https://yarotbot.tk/'; 
     }
 	
 	getMonthRecords = (month, year, userID) => {
-		let url = `${this.url}?month=${month}&year=${year}`;
+		const url = `${this.url}getData?month=${month}&year=${year}`;
 		fetch(url).then(r=>r.json()).then(d => {
 			const records = {
 				days:[]
@@ -39,5 +39,14 @@ export default class calendarModel {
 		});
 	};
 
-	addRecord = ({date, slot, user}) => {};
+	addRecord = (data) => {
+		const url = `${this.url}postData`;
+		fetch(url, {
+		  method: "POST",
+		  headers: {'Content-Type': 'application/json'}, 
+		  body: JSON.stringify(data)
+		}).then(r => r.json()).then(d=>{
+		  console.log("Request complete! response:", d);
+		});
+	};
 }

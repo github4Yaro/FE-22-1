@@ -33,6 +33,8 @@ export default class calendarView {
 		 	keyboard: false
 		});
 		[this.curDay, this.curMonth, this.curYear] = moment().format('D MM YYYY').split(' ');
+		this.createRecordBtn = document.getElementById('createRecord'); 
+		this.createRecordBtn.addEventListener('click', () => calendar.createRecord());
 	}
 
 	renderCalendar = (records) => {
@@ -127,18 +129,23 @@ export default class calendarView {
 		
 		let slotsHTML = ''
 		let i = 0;
-		console.log(slots);
+		
 		for (const time in slots) {
 			const disabled = (slots[time] == 'open')? '' : 'disabled';
 			const cls = (slots[time] == 'self')?'btn-warning':'btn-info';
-			slotsHTML += `<input type="radio" class="btn-check" name="slot" id="slot_${time}" autocomplete="off" ${disabled}>
+			slotsHTML += `<input type="radio" class="btn-check" name="slot" id="slot_${time}" data-slot="${time}" autocomplete="off" ${disabled}>
 				<label class="btn ${cls} btn-sm m-2" for="slot_${time}">${time}</label>`;
 			if (i == 2) {
 				slotsHTML += `<br/>`;	
 			}
 			i++;
 		}
-		this.slotSelector.innerHTML = slotsHTML
+		this.slotSelector.innerHTML = slotsHTML;
+		const activeSlots = this.slotSelector.querySelectorAll('input:not([disabled])');
+
+		for (const slot of activeSlots) {
+		  	slot.addEventListener('click', (el)=>calendar.selectSlot(el.target.dataset.slot));
+		}
 		this.slotPopup.show();
 	}
 	

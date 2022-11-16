@@ -28,8 +28,24 @@ export default class calendarController {
 
 	selectDay = (day) => {
 		if(this.records.days[day] != undefined){
+			this.day = day;
 			this.view.renderSlots(this.records.days[day]);
 		}
+	}
+
+	selectSlot = (slot) => {
+		this.slot = slot;
+	}
+
+	createRecord = () => {
+		const data = {
+			year:this.year,
+			month:this.month,
+			day:this.day,
+			slot:this.slot,
+			user:this.userID
+		}
+		this.model.addRecord(data);
 	}
 
 	handleUpdate = (records) => {

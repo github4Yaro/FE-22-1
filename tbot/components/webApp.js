@@ -13,6 +13,8 @@ export default class webApp {
     	this.initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};	
     	this.user = this.initDataUnsafe.user || {};
 
+    	console.log(Telegram.WebApp.initDataUnsafe);
+
     	this.userInfoLabel.innerText = (this.user)?this.user.first_name:'';
 
     	calendar = new calendarController(this.user.id || 1234567890);
