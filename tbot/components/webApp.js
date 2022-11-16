@@ -13,7 +13,7 @@ export default class webApp {
     	this.initDataUnsafe = Telegram.WebApp.initDataUnsafe || {};	
     	this.user = this.initDataUnsafe.user || {};
     	console.log(this.initDataUnsafe);
-    	window.hash = this.initDataUnsafe.hash;
+    	window.hash = this.initData;
 
     	this.userInfoLabel.innerText = (this.user)?this.user.first_name:'';
 
