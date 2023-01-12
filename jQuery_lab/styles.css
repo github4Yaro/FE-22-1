@@ -1,0 +1,26 @@
+#container{
+	display: grid;
+	grid-template-columns: repeat(4, 50px);
+	grid-template-rows: repeat(4, 50px);
+	font-size: 40px;
+}
+
+.selected {
+	border: 1px solid black; 
+}
+
+.almazik:after {
+ content: "\1F539";
+}
+
+.rubinchik:after {
+ content: "\1F53A";
+}
+
+.topazik:after {
+ content: "\1F7E0";
+}
+
+.izumrudik:after {
+ content: "\1F7E9";
+}
